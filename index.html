@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .search-container {
+            text-align: center;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        img {
+            margin-top: 10px;
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>www.boi.com</h1>
+        <input type="text" id="searchInput" placeholder="Type your query...">
+        <button onclick="searchQuery()">Search</button>
+        <h6>Hint: manchodu</h6>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function searchQuery() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const resultDiv = document.getElementById('result');
+
+            if (query === 'manchodu') {
+                resultDiv.innerHTML = `
+                    <p>Name: Shaik Rahil</p>
+                    <img src="passport_photo.jpg" alt="Shaik Rahil">
+                `;
+            } else {
+                resultDiv.innerHTML = '<p>No results found.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
